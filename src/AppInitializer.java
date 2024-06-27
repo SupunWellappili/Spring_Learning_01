@@ -1,4 +1,6 @@
 import bean.SpringBeanOne;
+import bean.SpringBeanThree;
+import bean.SpringBeanTwo;
 import config.AppConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -19,26 +21,35 @@ public class AppInitializer {
                 ctx.close();
             }
         }));*/
-
         ctx.registerShutdownHook();
 
-        /*ctx.getBean(springBeanOne.class);
-        ctx.getBean(springBeanTwo.class);
-        ctx.getBean(springBeanThree.class);*/
+
+        /*SpringBeanOne beanOne = ctx.getBean(SpringBeanOne.class);
+        System.out.println(beanOne);
+
+        SpringBeanTwo beanTwo = ctx.getBean(SpringBeanTwo.class);
+        System.out.println(beanTwo);
+
+        SpringBeanThree beanThree = ctx.getBean(SpringBeanThree.class);
+        System.out.println(beanThree);*/
 
 
         //Bean Name Request (Bean ID)
         //First Letter Simple
        /* Object springBeanOne = ctx.getBean("springBeanOne");
         System.out.println(springBeanOne);*/
+
         SpringBeanOne springBeanOne = (SpringBeanOne) ctx.getBean("springBeanOne");
         System.out.println(springBeanOne);
 
         Object springBeanTwo  =  ctx.getBean("springBeanTwo");
         System.out.println(springBeanTwo);
 
-        Object springBeanThree =  ctx.getBean("springBeanThree");
+        Object springBeanThree =  ctx.getBean("SpringBeanThree");
         System.out.println(springBeanThree);
+
+        ctx.close();
+
 
     }
 }
