@@ -34,6 +34,11 @@ public class AppInitializer {
         SpringBeanOne springBeanOne = (SpringBeanOne) ctx.getBean("springBeanOne");
         System.out.println(springBeanOne);
 
+        Object springBeanTwo  =  ctx.getBean("springBeanTwo");
+        System.out.println(springBeanTwo);
+
+        Object springBeanThree =  ctx.getBean("springBeanThree");
+        System.out.println(springBeanThree);
 
     }
 }
