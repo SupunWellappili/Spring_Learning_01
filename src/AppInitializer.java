@@ -1,6 +1,4 @@
-import bean.springBeanOne;
-import bean.springBeanThree;
-import bean.springBeanTwo;
+import bean.SpringBeanOne;
 import config.AppConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -24,12 +22,17 @@ public class AppInitializer {
 
         ctx.registerShutdownHook();
 
-
-
-
-        ctx.getBean(springBeanOne.class);
+        /*ctx.getBean(springBeanOne.class);
         ctx.getBean(springBeanTwo.class);
-        ctx.getBean(springBeanThree.class);
+        ctx.getBean(springBeanThree.class);*/
+
+
+        //Bean Name Request (Bean ID)
+        //First Letter Simple
+       /* Object springBeanOne = ctx.getBean("springBeanOne");
+        System.out.println(springBeanOne);*/
+        SpringBeanOne springBeanOne = (SpringBeanOne) ctx.getBean("springBeanOne");
+        System.out.println(springBeanOne);
 
 
     }

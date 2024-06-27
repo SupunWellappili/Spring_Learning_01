@@ -3,8 +3,8 @@ package bean;
 import org.springframework.stereotype.Component;
 
 @Component
-public class springBeanThree {
-    public springBeanThree() {
+public class SpringBeanThree {
+    public SpringBeanThree() {
         System.out.println("Object Created from bean three");
     }
 }
