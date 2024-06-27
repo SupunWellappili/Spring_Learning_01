@@ -1,2 +1,3 @@
-public class Pojo {
-}
+public class Pojo extends main {
+
+    }
