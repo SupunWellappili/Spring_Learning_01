@@ -1,6 +1,5 @@
+import bean.MyConnection;
 import bean.SpringBeanOne;
-import bean.SpringBeanThree;
-import bean.SpringBeanTwo;
 import config.AppConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -47,6 +46,10 @@ public class AppInitializer {
 
         Object springBeanThree =  ctx.getBean("SpringBeanThree");
         System.out.println(springBeanThree);
+
+        MyConnection myConnection = ctx.getBean(MyConnection.class);
+        System.out.println(myConnection);
+
 
         ctx.close();
 
