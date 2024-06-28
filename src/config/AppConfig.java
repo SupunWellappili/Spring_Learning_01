@@ -9,8 +9,8 @@ import org.springframework.context.annotation.Configuration;
 
 //How to scan POJOs and enter to the Application Context
 @Configuration
-//@ComponentScan(basePackages = "bean")
-@ComponentScan(basePackageClasses = SpringBeanOne.class)
+@ComponentScan(basePackages = "bean")
+//@ComponentScan(basePackageClasses = SpringBeanOne.class)
 public class AppConfig {
 
     public AppConfig() {

@@ -1,5 +1,6 @@
 import bean.MyConnection;
 import bean.SpringBeanOne;
+import bean.SpringBeanTwo;
 import config.AppConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -38,18 +39,31 @@ public class AppInitializer {
        /* Object springBeanOne = ctx.getBean("springBeanOne");
         System.out.println(springBeanOne);*/
 
-        SpringBeanOne springBeanOne = (SpringBeanOne) ctx.getBean("springBeanOne");
+        /*SpringBeanOne springBeanOne = (SpringBeanOne) ctx.getBean("springBeanOne");
         System.out.println(springBeanOne);
 
         Object springBeanTwo  =  ctx.getBean("springBeanTwo");
         System.out.println(springBeanTwo);
 
         Object springBeanThree =  ctx.getBean("SpringBeanThree");
-        System.out.println(springBeanThree);
+        System.out.println(springBeanThree);*/
 
-        MyConnection myConnection = ctx.getBean(MyConnection.class);
+        //MyConnection --> myConnection //no
+        //@Bean -- Bean ID --> Bean method name //yes
+        MyConnection myConnection = (MyConnection) ctx.getBean("getConnecting");
         System.out.println(myConnection);
 
+        MyConnection myConnection2 = (MyConnection) ctx.getBean("getConnecting");
+        System.out.println(myConnection2);
+
+        //Singleton Objects
+        SpringBeanOne ref1 = ctx.getBean(SpringBeanOne.class);
+        SpringBeanOne ref2 = ctx.getBean(SpringBeanOne.class);
+        System.out.println(ref1 + " : " + ref2);
+
+        SpringBeanTwo b2ref1 = ctx.getBean(SpringBeanTwo.class);
+        SpringBeanTwo b2ref2 = ctx.getBean(SpringBeanTwo.class);
+        System.out.println(b2ref1+" : "+b2ref2 );
 
         ctx.close();
 
